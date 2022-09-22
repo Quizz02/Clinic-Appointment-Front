@@ -1,0 +1,12 @@
+.logo{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 50%;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
