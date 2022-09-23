@@ -12,7 +12,7 @@ import {Patient} from "../../../Models/Patient";
 })
 export class PatientListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'illness', 'sex', 'age'];
+  displayedColumns: string[] = ['patientId', 'firstName', 'lastName', 'illness', 'sex', 'age', 'actions'];
   dataSource!: MatTableDataSource<any>;
   patientList: Patient[];
 
@@ -31,8 +31,25 @@ export class PatientListComponent implements OnInit {
     });
   }
 
-  AddAppointment() {
+  AddPatient() {
     this.router.navigate(['addPatient']);
   }
 
+  EditPatient(patient: Patient) {
+    console.log(patient.patientId)
+    localStorage.setItem("id", patient.patientId.toString());
+    this.router.navigate(["editPatient"])
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
+  DeletePatient(patient: Patient){
+    this.patientService.deletePatient(patient).subscribe(data => {
+      this.patientList = this.patientList.filter(p => p! == patient);
+      alert("El registro del paciente ha sido eliminado");
+    })
+    this.refresh();
+  }
 }

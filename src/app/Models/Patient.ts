@@ -1,5 +1,5 @@
 export interface Patient{
-  patientid: number
+  patientId: number
   firstName: String
   lastName: String
   illness: String

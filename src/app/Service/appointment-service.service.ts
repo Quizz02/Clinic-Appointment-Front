@@ -25,11 +25,11 @@ export class AppointmentServiceService {
     return this.http.post<ClinicAppointment>(this.appointmentUrl, appointment);
   }
 
-  updatePatient(appointment:ClinicAppointment) {
+  updateAppointment(appointment:ClinicAppointment) {
     return this.http.put<ClinicAppointment>(this.appointmentUrl + "/" + appointment.appointmentId, appointment);
   }
 
-  deletePatient(appointment: ClinicAppointment) {
+  deleteAppointment(appointment: ClinicAppointment) {
     return this.http.delete<ClinicAppointment>(this.appointmentUrl + "/" + appointment.appointmentId);
   }
 }

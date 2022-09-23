@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class AppointmentListComponent implements OnInit {
 
-  displayedColumns: string[] = ['appointmentId', 'patient', 'specialty', 'description'];
+  displayedColumns: string[] = ['appointmentId', 'patient', 'specialty', 'description', 'actions'];
   dataSource! : MatTableDataSource<any>;
   appointmentList: ClinicAppointment[];
   appointment: ClinicAppointment;
@@ -45,4 +45,21 @@ export class AppointmentListComponent implements OnInit {
     this.router.navigate(['addAppointment']);
   }
 
+  EditAppointment(appointment: ClinicAppointment){
+    console.log(appointment.appointmentId)
+    localStorage.setItem("id", appointment.appointmentId.toString());
+    this.router.navigate(["editAppointment"])
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
+  DeleteAppointment(appointment: ClinicAppointment){
+    this.service.deleteAppointment(appointment).subscribe(data => {
+      this.appointmentList = this.appointmentList.filter(a => a! = appointment);
+      alert("La cita ha sido eliminada");
+    })
+    this.refresh();
+  }
 }

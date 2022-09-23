@@ -32,3 +32,15 @@ button {
   background: #3F51B5;
   height: 100%;
 }
+
+
+button mat-icon{
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+td a{
+  margin: 10px;
+}
+

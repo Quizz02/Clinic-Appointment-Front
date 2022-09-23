@@ -19,6 +19,7 @@ import { EditAppointmentComponent } from './Pages/Appointment/edit-appointment/e
 import { EditPatientComponent } from './Pages/Patient/edit-patient/edit-patient.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {FormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {FormsModule} from "@angular/forms";
         MatPaginatorModule,
         HttpClientModule,
         FormsModule,
+        MatIconModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

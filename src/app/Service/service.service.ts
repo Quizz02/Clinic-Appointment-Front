@@ -25,11 +25,11 @@ export class ServiceService {
   }
 
   updatePatient(patient:Patient) {
-    return this.http.put<Patient>(this.patientUrl + "/" + patient.patientid, patient);
+    return this.http.put<Patient>(this.patientUrl + "/" + patient.patientId, patient);
   }
 
   deletePatient(patient: Patient) {
-    return this.http.delete<Patient>(this.patientUrl + "/" + patient.patientid);
+    return this.http.delete<Patient>(this.patientUrl + "/" + patient.patientId);
   }
 
 }
