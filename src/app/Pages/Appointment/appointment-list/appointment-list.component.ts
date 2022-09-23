@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 })
 export class AppointmentListComponent implements OnInit {
 
-  displayedColumns: string[] = ['appointmentId', 'patient', 'specialty', 'description', 'actions'];
+  displayedColumns: string[] = ['appointmentId', 'patient', 'specialty', 'description', 'date', 'actions'];
   dataSource! : MatTableDataSource<any>;
   appointmentList: ClinicAppointment[];
   appointment: ClinicAppointment;

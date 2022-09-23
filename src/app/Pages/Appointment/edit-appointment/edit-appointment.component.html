@@ -17,6 +17,10 @@
           <label for="#">Especialidad a la que desea consultar:</label>
           <input [(ngModel)]="appointment.specialty" name="specialty" type="text" class="form-control">
         </div>
+        <div class="form-group">
+          <label for="#">Fecha de la cita:</label>
+          <input [(ngModel)]="appointment.date" name="date" type="text" class="form-control">
+        </div>
         <button (click)="Update(appointment)" style="margin-top: 25px" class="btn btn-primary">Agregar</button>
       </form>
     </div>

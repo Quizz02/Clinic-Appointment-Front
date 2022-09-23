@@ -5,6 +5,7 @@ export interface ClinicAppointment{
   patient: String
   specialty: String
   infodesc: String
+  date: String
   appointmentDate: Date
   appointmentHour: Time
 }
