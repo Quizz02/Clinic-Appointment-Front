@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ClinicAppointment} from "../../../Models/ClinicAppointment";
+import {AppointmentServiceService} from "../../../Service/appointment-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-appointment',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAppointmentComponent implements OnInit {
 
-  constructor() { }
+  appointment: ClinicAppointment;
+
+  constructor(private service:AppointmentServiceService, private router:Router) {
+    this.appointment = {} as ClinicAppointment;
+  }
 
   ngOnInit(): void {
+  }
+
+  createAppointment() {
+    this.service.createAppointment(this.appointment)
+      .subscribe(data => {
+        alert("La cita ha sido agendada con éxito");
+        this.router.navigate(["appointmentList"]);
+      });
   }
 
 }

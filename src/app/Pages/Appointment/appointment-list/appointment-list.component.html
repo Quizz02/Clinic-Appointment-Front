@@ -7,42 +7,30 @@
             Citas
           </mat-card-title>
           <div class="btn-container">
-            <button>Agregar Cita</button>
+            <button (click)="AddAppointment()">Agregar Cita</button>
           </div>
         </div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-
-          <!-- Position Column -->
           <ng-container matColumnDef="appointmentId">
             <th mat-header-cell *matHeaderCellDef> No.</th>
             <td mat-cell *matCellDef="let element"> {{element.appointmentId}} </td>
           </ng-container>
 
-          <!-- Name Column -->
           <ng-container matColumnDef="patient">
             <th mat-header-cell *matHeaderCellDef> Nombre del Paciente</th>
             <td mat-cell *matCellDef="let element"> {{element.patient}} </td>
           </ng-container>
 
-          <!-- Weight Column -->
           <ng-container matColumnDef="specialty">
             <th mat-header-cell *matHeaderCellDef> Especialidad </th>
             <td mat-cell *matCellDef="let element"> {{element.specialty}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
           <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef> Descripción</th>
             <td mat-cell *matCellDef="let element"> {{element.infodesc}} </td>
           </ng-container>
-
-<!--          <ng-container matColumnDef="date">-->
-<!--            <th mat-header-cell *matHeaderCellDef> Fecha</th>-->
-<!--            <td mat-cell *matCellDef="let element"> {{dateParse[element.appointmentId] | date: 'short' }} </td>-->
-<!--          </ng-container>-->
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

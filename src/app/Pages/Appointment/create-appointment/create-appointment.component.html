@@ -1,1 +1,24 @@
-<p>create-appointment works!</p>
+<div class="container col-md-3">
+  <mat-card class="card">
+    <div class="card-header">
+      <mat-card-title>Agregar Cita</mat-card-title>
+    </div>
+    <div class="card-body">
+      <form action="">
+        <div class="form-group">
+          <label for="#">Nombre del Paciente:</label>
+          <input [(ngModel)]="appointment.patient" name="patient" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="#">Descripción:</label>
+          <input [(ngModel)]="appointment.infodesc" name="infodesc" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="#">Especialidad a la que desea consultar:</label>
+          <input [(ngModel)]="appointment.specialty" name="specialty" type="text" class="form-control">
+        </div>
+        <button (click)="createAppointment()" style="margin-top: 25px" class="btn btn-primary">Agregar</button>
+      </form>
+    </div>
+  </mat-card>
+</div>

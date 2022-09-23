@@ -41,4 +41,8 @@ export class AppointmentListComponent implements OnInit {
     console.log(this.dateParse);
   }
 
+  AddAppointment() {
+    this.router.navigate(['addAppointment']);
+  }
+
 }

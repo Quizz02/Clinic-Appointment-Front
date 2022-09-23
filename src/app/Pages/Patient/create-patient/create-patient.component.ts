@@ -21,7 +21,8 @@ export class CreatePatientComponent implements OnInit {
 
   createPatient() {
     this.service.createPatient(this.patient).subscribe(data => {
-      
+      alert("El paciente ha sido agregado con éxito");
+      this.router.navigate(["patientList"])
     })
   }
 

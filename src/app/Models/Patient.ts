@@ -1,7 +1,7 @@
 export interface Patient{
   patientid: number
   firstName: String
-  lastname: String
+  lastName: String
   illness: String
   sex: String
   age: number;

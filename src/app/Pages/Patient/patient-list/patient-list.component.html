@@ -7,45 +7,38 @@
             Pacientes
           </mat-card-title>
           <div class="btn-container">
-            <button>Agregar Paciente</button>
+            <button (click)="AddAppointment()">Agregar Paciente</button>
           </div>
         </div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-
-          <!-- Position Column -->
           <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <th mat-header-cell *matHeaderCellDef> No. </th>
             <td mat-cell *matCellDef="let element"> {{element.patientId}} </td>
           </ng-container>
 
-          <!-- Name Column -->
           <ng-container matColumnDef="firstName">
-            <th mat-header-cell *matHeaderCellDef> First Name </th>
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
             <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
           </ng-container>
 
-          <!-- Weight Column -->
           <ng-container matColumnDef="lastName">
-            <th mat-header-cell *matHeaderCellDef> Last Name </th>
+            <th mat-header-cell *matHeaderCellDef> Apellido </th>
             <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
           </ng-container>
 
-          <!-- Symbol Column -->
           <ng-container matColumnDef="illness">
-            <th mat-header-cell *matHeaderCellDef> Illness </th>
+            <th mat-header-cell *matHeaderCellDef> Enfermedad </th>
             <td mat-cell *matCellDef="let element"> {{element.illness}} </td>
           </ng-container>
 
           <ng-container matColumnDef="sex">
-            <th mat-header-cell *matHeaderCellDef> Sex </th>
+            <th mat-header-cell *matHeaderCellDef> Sexo </th>
             <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
           </ng-container>
 
           <ng-container matColumnDef="age">
-            <th mat-header-cell *matHeaderCellDef> Age </th>
+            <th mat-header-cell *matHeaderCellDef> Edad </th>
             <td mat-cell *matCellDef="let element"> {{element.age}} </td>
           </ng-container>
 

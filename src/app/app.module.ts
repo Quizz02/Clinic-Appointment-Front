@@ -18,6 +18,7 @@ import { AppointmentListComponent } from './Pages/Appointment/appointment-list/a
 import { EditAppointmentComponent } from './Pages/Appointment/edit-appointment/edit-appointment.component';
 import { EditPatientComponent } from './Pages/Patient/edit-patient/edit-patient.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -31,18 +32,19 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     EditAppointmentComponent,
     EditPatientComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatTableModule,
-    MatPaginatorModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
+        HttpClientModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
