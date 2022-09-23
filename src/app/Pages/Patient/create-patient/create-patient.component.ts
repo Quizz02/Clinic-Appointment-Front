@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Patient} from "../../../Models/Patient";
+import {Router} from "@angular/router";
+import {ServiceService} from "../../../Service/service.service";
 
 @Component({
   selector: 'app-create-patient',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePatientComponent implements OnInit {
 
-  constructor() { }
+  patient:Patient;
+
+  constructor(private service:ServiceService ,private router:Router) {
+    this.patient = {} as Patient;
+  }
 
   ngOnInit(): void {
+  }
+
+  createPatient() {
+    this.service.createPatient(this.patient).subscribe(data => {
+      
+    })
   }
 
 }
